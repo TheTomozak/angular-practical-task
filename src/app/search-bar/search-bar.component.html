@@ -9,11 +9,7 @@
         <input list="datalistOptions" type="text" class="form-control" placeholder="What are we looking for today?">
         <button class="btn btn-primary">Search</button>
         <datalist id="datalistOptions">
-          <option value="San Francisco">
-          <option value="New York">
-          <option value="Seattle">
-          <option value="Los Angeles">
-          <option value="Chicago">
+          <option *ngFor="let word of suggestedWords"  value="{{word}}">
         </datalist>
       </div>
     </div>
