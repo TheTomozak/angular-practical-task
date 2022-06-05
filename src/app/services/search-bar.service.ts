@@ -15,7 +15,7 @@ export class SearchBarService {
   baseUrl: string = environment.apiUrl;
 
   public list(): Observable<SuggestedData[]> {
-    return this.http.get<SuggestedData[]>(`${this.baseUrl}20kMostUsedWords.json`);
+    return this.http.get<SuggestedData[]>(`${this.baseUrl}mostUsedWords.json`);
   }
 
 }
