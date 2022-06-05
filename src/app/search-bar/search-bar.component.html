@@ -6,8 +6,8 @@
 
       <div class="search">
         <i class="fa fa-search"></i>
-        <input list="datalistOptions" type="text" class="form-control" placeholder="What are we looking for today?">
-        <button class="btn btn-primary">Search</button>
+        <input [(ngModel)]="wordFromInput" (keydown.enter)='searchPhraseInGoogleEngine()' list="datalistOptions" type="text" class="form-control" placeholder="What are we looking for today?">
+        <button type="button" (click)="searchPhraseInGoogleEngine()"  class="btn btn-primary" >Search</button>
         <datalist id="datalistOptions">
           <option *ngFor="let word of suggestedWords"  value="{{word}}">
         </datalist>

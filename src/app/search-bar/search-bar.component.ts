@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SearchBarService} from "../services/search-bar.service";
 import {SuggestedData} from "../models/SuggestedData";
 
@@ -9,15 +9,17 @@ import {SuggestedData} from "../models/SuggestedData";
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor(private searchBarService: SearchBarService) { }
+  constructor(private searchBarService: SearchBarService) {
+  }
 
   suggestedWords?: SuggestedData[];
+  wordFromInput: string = '';
 
   ngOnInit(): void {
     this.loadSuggestedWords()
   }
 
-  loadSuggestedWords(): void{
+  loadSuggestedWords(): void {
     this.searchBarService
       .list()
       .subscribe({
@@ -30,5 +32,11 @@ export class SearchBarComponent implements OnInit {
 
       });
   }
+
+  searchPhraseInGoogleEngine(): void {
+    let textToSearch = encodeURI(this.wordFromInput);
+    window.open(`https://www.google.com/search?q=${textToSearch}`)
+  }
+
 
 }
