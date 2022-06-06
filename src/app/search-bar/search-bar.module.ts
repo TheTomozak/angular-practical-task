@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { SearchBarRoutingModule } from './search-bar-routing.module';
-import { SearchBarComponent } from './search-bar.component';
+import {SearchBarRoutingModule} from './search-bar-routing.module';
+import {SearchBarComponent} from './search-bar.component';
 import {FormsModule} from "@angular/forms";
 
 
@@ -19,4 +19,5 @@ import {FormsModule} from "@angular/forms";
     FormsModule
   ]
 })
-export class SearchBarModule { }
+export class SearchBarModule {
+}

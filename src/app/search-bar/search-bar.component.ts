@@ -9,11 +9,11 @@ import {SuggestedData} from "../models/SuggestedData";
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor(private searchBarService: SearchBarService) {
-  }
-
   suggestedWords?: SuggestedData[];
   wordFromInput: string = '';
+
+  constructor(private searchBarService: SearchBarService) {
+  }
 
   ngOnInit(): void {
     this.loadSuggestedWords()

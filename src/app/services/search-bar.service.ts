@@ -9,10 +9,10 @@ import {SuggestedData} from "../models/SuggestedData";
 })
 export class SearchBarService {
 
+  baseUrl: string = environment.apiUrl;
+
   constructor(private http: HttpClient) {
   }
-
-  baseUrl: string = environment.apiUrl;
 
   public list(): Observable<SuggestedData[]> {
     return this.http.get<SuggestedData[]>(`${this.baseUrl}mostUsedWords.json`);

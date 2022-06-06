@@ -6,10 +6,11 @@
 
       <div class="search">
         <i class="fa fa-search"></i>
-        <input [(ngModel)]="wordFromInput" (keydown.enter)='searchPhraseInGoogleEngine()' list="datalistOptions" type="text" class="form-control" placeholder="What are we looking for today?">
-        <button type="button" (click)="searchPhraseInGoogleEngine()"  class="btn btn-primary" >Search</button>
+        <input (keydown.enter)='searchPhraseInGoogleEngine()' [(ngModel)]="wordFromInput" class="form-control"
+               list="datalistOptions" placeholder="What are we looking for today?" type="text">
+        <button (click)="searchPhraseInGoogleEngine()" class="btn btn-primary" type="button">Search</button>
         <datalist id="datalistOptions">
-          <option *ngFor="let word of suggestedWords"  value="{{word}}">
+          <option *ngFor="let word of suggestedWords" value="{{word}}">
         </datalist>
       </div>
     </div>
